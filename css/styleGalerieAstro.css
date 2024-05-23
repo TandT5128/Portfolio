@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url("../fonts/Montserrat-Medium.otf");
+}
+
+body {
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+img {
+    width: 100%; /* écraser les dimensions de l'image */
+    height: auto;
+    border-radius: 1.5%;
+}
+
+h2 {
+    font-family: 'Montserrat-Medium';
+    font-size: 1.4em;
+    line-height: 1.1em;
+    margin-bottom: .5em;
+    color: #ffffff;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+}
+
+.bg-aeroN {
+    background: url(/img/background2.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: left top;
+}
+
+/* styles */
+.location-listing {
+    position: relative;
+}
+
+.location-image {
+    line-height: 0;
+    overflow: hidden;
+}
+
+.location-image img {
+    filter: blur(0px);
+    transition: filter 0.3s ease-in;
+    transform: scale(1.0);
+}
+
+.location-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    color: white;
+    /* texte au milieu de la fenêtre */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-listing:hover .location-title {
+    opacity: 1;
+}
+
+.location-listing:hover .location-image img {
+    filter: blur(1px);
+}
+
+/* pour les écrans tactiles */
+@media (hover: none) {
+    .location-title {
+        opacity: 1;
+    }
+
+    .location-image img {
+        filter: blur(1px);
+    }
+}
