@@ -1,0 +1,217 @@
+/* Import des polices */
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'OswaldExtraLight';
+    src: url("../fonts/Oswald-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url("../fonts/Montserrat-Medium.otf");
+}
+
+body {
+    font-family: 'BalooDaRegular';
+    margin: 0px;
+    padding: 0px;
+    background: url(https://aero.rektoz.web-edu.fr/img/background2.jpg);
+}
+
+nav{
+    width: 100%;
+    background-color: #424558;
+}
+
+nav > ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav > ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*Position des menus*/
+
+nav > ul > li{
+    float: left;
+    position: relative;
+}
+
+/*Couleur de la police et taille des menus*/
+
+nav > ul > li > a{
+    padding: 20px 30px;
+    color: #FFF;
+}
+
+/*Blocage de la navbar*/
+
+nav > ul > li:hover a{
+    padding: 15px 30px 20px 30px;
+}
+
+/*Suppression des puces*/
+
+nav li{
+    list-style-type: none;
+}
+
+/*Masquage des sous-menus*/
+
+.submenu{
+    display: none;
+}
+
+.submenu-right {
+    display: none;
+}
+
+/*Placement*/
+
+.menu-contact {
+    float: right;
+}
+
+/*Présentation des menus*/
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+/*Apparition des sous-menus*/
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+nav li:hover .submenu-right {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+/*Bordure entre chaque sous-menu*/
+
+.submenu li{
+    border-bottom: 1px solid #CCC;
+}
+
+.submenu-right li{
+    border-bottom: 1px solid #CCC;
+}
+
+/*Forme + Police des sous-menus*/
+
+.submenu li a{
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #222538;
+    width: 125px;
+}
+
+.submenu{
+    text-align: center;
+}
+
+.submenu-right li a {
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #222538;
+    width: 125px;
+}
+
+.submenu-right{
+    text-align: center;
+}
+
+/*Couleur de fond et de la barre des menus*/
+
+.menu-jeux:hover{
+    border-top: 5px solid #e44d26;
+    background-color: RGBa(228, 77, 38, 0.15);
+}
+
+.menu-projets:hover {
+    border-top: 5px solid #09AC29;
+    background-color: RGBa(009, 172, 041, 0.15);
+}
+
+.menu-decouvrir:hover {
+    border-top: 5px solid #0070bb;
+    background-color: RGBa(000, 112, 187, 0.15);
+}
+
+.menu-contact:hover {
+    border-top: 5px solid #FFFD5F;
+    background-color: RGBa(255, 253, 95, 0.15);
+}
+
+/* Couleur de fond des sous-menus */
+
+.menu-jeux .submenu{
+    background: RGB(230, 100, 40);
+}
+
+.menu-projets .submenu{
+    background: RGB(009, 172, 041);
+}
+
+.menu-decouvrir .submenu {
+    background: RGB(000, 160, 240);
+}
+
+.menu-contact .submenu-right {
+    background: RGB(255, 253, 95);
+}
+
+/* Couleur de la police pendant un hover */
+
+.submenu li:hover a{
+    color: #BBB;
+    font-weight: bold;
+}
+
+.submenu-right li:hover a {
+    color: #BBB;
+    font-weight: bold;
+}
+
+/* Couleur de fond des sous-menus pendant un hover */
+
+.menu-jeux .submenu li:hover{
+    background-color: RGB(210, 70, 60);
+}
+
+.menu-projets .submenu li:hover{
+    background-color: RGB(6, 141, 32);
+}
+
+.menu-decouvrir .submenu li:hover{
+    background-color: RGB(16, 114, 182);
+}
+
+.menu-contact .submenu-right li:hover{
+    background-color: RGB(225, 222, 21);
+}
+
+.conteneur {
+    margin: 25px 35px;
+    height: auto;
+}
