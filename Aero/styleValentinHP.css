@@ -1,0 +1,145 @@
+@font-face{
+    font-family: 'SFToontime';
+    src: url("../fonts/SFToontime.ttf");
+}
+
+@font-face{
+    font-family: 'OpenSansBold';
+    src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face{
+    font-family: 'GothamLight';
+    src: url("../fonts/GothamLight.ttf");
+}
+
+@font-face{
+    font-family: 'OswaldExtraLight';
+    src: url("../fonts/Oswald-ExtraLight.ttf");
+}
+
+@font-face{
+    font-family: 'BalooDaRegular';
+    src: url("../fonts/BalooDaRegular.ttf");
+}
+
+@font-face{
+    font-family: 'ComicNeueRegular';
+    src: url("../fonts/ComicNeue-Regular.ttf");
+}
+
+@font-face{
+    font-family: 'UbuntuLight';
+    src: url("../fonts/Ubuntu-Light.ttf");
+}
+
+@font-face{
+    font-family: 'UbuntuRegular';
+    src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face{
+    font-family: 'LiuJianMaoCaoRegular';
+    src: url("../fonts/LiuJianMaoCao-Regular.ttf");
+}
+
+@font-face{
+    font-family: 'IndieFlowerRegular';
+    src: url("../fonts/IndieFlower-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url("../fonts/Montserrat-Medium.otf");
+}
+
+html {
+    background: url(/img/background2.jpg);
+    background-attachment: fixed;
+    display: table;
+    margin: auto;
+    color: #000;
+}
+
+.BaseText{
+    font-family: 'BalooDaRegular';
+    font-size: 1.4em;
+    line-height: 1.1em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.Bienvenue {
+	font-family: 'ComicNeueRegular';
+	background: -webkit-linear-gradient(#ffffff, #99ccff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #CCCCCC;
+	text-align: center;
+}
+
+.Citation {
+	font-family: 'IndieFlowerRegular';
+	color: #F0F8FF;
+	text-align: center;
+}
+
+.Auteur {
+	font-family: 'LiuJianMaoCaoRegular';
+	color: #000066;
+	text-align: center;
+}
+
+table {
+	text-align: center;
+	border-collapse: collapse;
+	color: #ffffff;
+	font-size: 18px;
+	}
+
+caption {
+	color: #ffff00;
+	font-size: 15px;
+	text-align: right;
+	}	
+
+th {
+	border-style:solid;
+	border-width: 2px;
+	font-size: 22px;
+	}	
+
+td {
+	border-style:solid;
+	border-width: 2px;
+	padding: 5px;
+	}
+
+.tarif {
+	position: absolute;
+	left: 55%;
+	top: 20%;
+	width: 45%;
+	}	
+
+.bg-blue{
+    background: url(http://free-pictures-hosting.org/upload/2019-11-21-10-55-17-461601-bg-blue.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: left top;
+    height: 100%;
+    overflow: hidden;
+}
+
+.column {
+  float: left;
+  width: 27%;
+  padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+  

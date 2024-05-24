@@ -1,0 +1,32 @@
+h1 {
+	color: #ffffff;
+	text-align: center;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+figure {
+    margin: 1;
+}
+
+figcaption {
+    background-color: #4d5b63;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+.bg-aeroN {
+    background: url(/img/background2.jpg);
+}

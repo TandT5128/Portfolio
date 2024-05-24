@@ -1,0 +1,159 @@
+<title>Projet Programmation</title>
+<meta charset="utf-8">
+<h1>Nous avons plusieurs projets de programmation en attente</h1>
+<p>
+    -Simulateur de vol<br>
+    -Répéteur d'ondes radio<br>
+    -Créer un gros PC avec plein de composants<br>
+</p>
+<div id="app">
+    <div>
+        <button class="sc-bdVaJa dPrWrX"><img src="https://image.flaticon.com/icons/svg/1164/1164954.svg" width="224" height="224" alt="Sun free icon" title="Sun free icon"><img src="https://image.flaticon.com/icons/svg/2033/2033921.svg" width="224" height="224" alt="Moon free icon" title="Moon free icon"></button>
+    </div>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.9.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/styled-components/4.3.2/styled-components.min.js"></script>
+    <script id="rendered-js">
+        const { createGlobalStyle, ThemeProvider } = styled;
+        const { useState, useEffect } = React;
+
+        const GlobalStyles = createGlobalStyle`
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: ${({ theme }) => theme.body};
+            color: ${({ theme }) => theme.text};
+            padding: 0;
+            margin: 0;
+            font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            transition: all 0.25s linear;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        small {
+            display: block;
+        }
+
+        button {
+            display: block;
+        }
+
+        a {
+            color: ${({ theme }) => theme.text};
+        }
+        `;
+
+        const lightTheme = {
+            body: '#e2e2e2',
+            text: '#363537',
+            toggleBorder: '#fff',
+            gradient: 'linear-gradient(#39598A, #79D7ED)'
+        };
+
+
+        const darkTheme = {
+            body: '#363537',
+            text: '#FAFAFA',
+            toggleBorder: '#6B8096',
+            gradient: 'linear-gradient(#091236, #1E215D)'
+        };
+
+
+        const Toggle = ({ theme, toggleTheme }) => {
+            const isLight = theme === 'light';
+
+            return (
+                React.createElement(ToggleContainer, { lightTheme: isLight, onClick: toggleTheme },
+                    React.createElement("img", { src: "https://image.flaticon.com/icons/svg/1164/1164954.svg", width: "224", height: "224", alt: "Sun free icon", title: "Sun free icon" }),
+                    React.createElement("img", { src: "https://image.flaticon.com/icons/svg/2033/2033921.svg", width: "224", height: "224", alt: "Moon free icon", title: "Moon free icon" })));
+
+
+        };
+
+        const ToggleContainer = styled.button`
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        background: ${({ theme }) => theme.gradient};
+        width: 8rem;
+        height: 3.5rem;
+        margin: 0 auto;
+        border-radius: 30px;
+        border: 2px solid ${({ theme }) => theme.toggleBorder};
+        font-size: 0.5rem;
+        padding: 0.5rem;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            max-width: 2.5rem;
+            height: auto;
+            transition: all 0.3s linear;
+
+            &:first-child {
+            transform: ${({ lightTheme }) => lightTheme ? 'translateY(0)' : 'translateY(100px)'};
+            }
+
+            &:nth-child(2) {
+            transform: ${({ lightTheme }) => lightTheme ? 'translateY(-100px)' : 'translateY(0)'};
+            }
+        }
+        `;
+
+        const useDarkMode = () => {
+            const [theme, setTheme] = useState('light');
+
+            const toggleTheme = () => {
+                if (theme === 'light') {
+                    setTheme('dark');
+                    window.localStorage.setItem('theme', 'dark');
+                } else {
+                    setTheme('light');
+                    window.localStorage.setItem('theme', 'light');
+                }
+            };
+
+            useEffect(() => {
+                const localTheme = window.localStorage.getItem('theme');
+
+                if (localTheme) {
+                    setTheme(localTheme);
+                } else {
+                    window.localStorage.setItem('theme', 'light');
+                }
+            });
+
+            return [theme, toggleTheme];
+        };
+
+        function App() {
+            const [theme, toggleTheme] = useDarkMode();
+            const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+            return (
+                React.createElement(ThemeProvider, { theme: themeMode },
+                    React.createElement("div", null,
+                        React.createElement(GlobalStyles, null),
+                        React.createElement(Toggle, { theme: theme, toggleTheme: toggleTheme }))));
+        };
+
+        ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
+        //# sourceURL=pen.js
+    </script>
+</div>
