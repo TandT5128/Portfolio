@@ -16,10 +16,10 @@
 }
 
 body {
-    font-family: 'BalooDaRegular';
+    font-family: 'Montserrat-Medium';
     margin: 0px;
     padding: 0px;
-    background: url(https://aero.rektoz.web-edu.fr/img/background2.jpg);
+    background: url(https://aero.rektoz.web-edu.fr/img/background2.jpg); /*Changer l'image de fond*/
 }
 
 nav{
